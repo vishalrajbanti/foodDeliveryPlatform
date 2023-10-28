@@ -41,11 +41,11 @@ public class UserController {
         return userService.placeOrder(authInfo,order);
    }
 
-   @GetMapping("order/{id}")
+   @GetMapping("order/user/id/{id}")
     public List<Order> getUserOrders(@PathVariable Long id){
         return userService.getUserOrders(id);
    }
-  @DeleteMapping("order/{id}")
+  @DeleteMapping("order/id/{id}")
     public String deleteOrderById(@PathVariable Long id){
         return userService.deleteByOrderId(id);
   }
