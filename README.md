@@ -1,4 +1,4 @@
-![alt text](http://./food-delivery.jpg)
+![](https://github.com/vishalrajbanti/foodDeliveryPlatform/blob/main/food-delivery.jpg)
 
 # Food Delivery Platform Application
 
