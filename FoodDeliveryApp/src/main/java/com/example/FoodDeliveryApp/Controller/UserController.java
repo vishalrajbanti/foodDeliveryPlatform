@@ -42,11 +42,11 @@ public class UserController {
    }
 
    @GetMapping("order/user/id/{id}")
-    public List<Order> getUserOrders(@PathVariable Long id){
-        return userService.getUserOrders(id);
+    public List<Order> getUserOrders(@PathVariable Long id,@RequestBody AuthenticationInputDto authInfo){
+        return userService.getUserOrders(id,authInfo);
    }
   @DeleteMapping("order/id/{id}")
-    public String deleteOrderById(@PathVariable Long id){
-        return userService.deleteByOrderId(id);
+    public String deleteOrderById(@PathVariable Long id,@RequestBody AuthenticationInputDto authInfo){
+        return userService.deleteByOrderId(id,authInfo);
   }
 }

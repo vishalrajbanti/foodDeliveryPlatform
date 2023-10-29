@@ -105,7 +105,7 @@ public class UserService {
 
     }
 
-    public String placeOrder(AuthenticationInputDto authInfo, Order order) {
+    public String  placeOrder(AuthenticationInputDto authInfo, Order order) {
         if (uTokenService.authenticate(authInfo)) {
             return orderService.placeOrder(order);
         } else {
@@ -115,11 +115,19 @@ public class UserService {
 
 
 
-    public List<Order> getUserOrders(Long id) {
+    public List<Order> getUserOrders(Long id,AuthenticationInputDto authInfo) {
+        if (uTokenService.authenticate(authInfo)) {
         return orderService.getUserOrders(id);
+        }else {
+            return null;
+        }
     }
 
-    public String deleteByOrderId(Long id) {
+    public String deleteByOrderId(Long id,AuthenticationInputDto authInfo) {
+        if (uTokenService.authenticate(authInfo)) {
         return orderService.deleteOrderById(id);
+        } else {
+            return "Un Authenticated access!!!";
+        }
     }
 }
